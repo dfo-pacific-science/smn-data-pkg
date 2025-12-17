@@ -1,0 +1,13 @@
+Column,Type,Required,Category,Description
+dataset_id,string,yes,required,References dataset_id in dataset.csv.
+table_id,string,yes,required,References table_id in tables.csv.
+column_name,string,yes,required,Exact column name in the data file.
+column_label,string,yes,required,Short human-readable label.
+column_description,string,yes,required,Clear definition of the column's meaning.
+column_role,string,yes,required,One of: identifier, attribute, temporal, categorical, measurement.
+value_type,string,yes,required,Basic type: integer, double, string, boolean, date, datetime.
+required,boolean,no,optional,TRUE if the column is required for each row, otherwise FALSE or blank.
+unit_label,string,no,optional,Human-readable unit label (e.g., number of fish, proportion).
+unit_iri,string,no,recommended,IRI for the unit (e.g., UCUM or other unit ontology). Use when the column represents a measurement with units.
+term_iri,string,no,recommended,IRI for the ontology term that represents what this column measures or represents. Links the column to concepts in the DFO Salmon Ontology.
+term_type,string,no,optional,Type of ontology term (e.g., owl_class, owl_object_property, skos_concept). Helps validators understand how to interpret the term_iri.

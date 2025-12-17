@@ -1,0 +1,41 @@
+name: Validate Specification
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'SPECIFICATION.md'
+      - 'schemas/**'
+      - 'examples/**'
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'SPECIFICATION.md'
+      - 'schemas/**'
+      - 'examples/**'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check specification file exists
+        run: test -f SPECIFICATION.md || (echo "SPECIFICATION.md not found" && exit 1)
+
+      - name: Check schema files exist
+        run: |
+          test -f schemas/dataset.csv || (echo "schemas/dataset.csv not found" && exit 1)
+          test -f schemas/tables.csv || (echo "schemas/tables.csv not found" && exit 1)
+          test -f schemas/column_dictionary.csv || (echo "schemas/column_dictionary.csv not found" && exit 1)
+          test -f schemas/codes.csv || (echo "schemas/codes.csv not found" && exit 1)
+
+      - name: Validate CSV structure
+        run: |
+          echo "Validating schema CSV files have required columns..."
+          # Basic validation that schema files have header rows
+          head -1 schemas/dataset.csv | grep -q "Column" || exit 1
+          head -1 schemas/tables.csv | grep -q "Column" || exit 1
+          head -1 schemas/column_dictionary.csv | grep -q "Column" || exit 1
+          head -1 schemas/codes.csv | grep -q "Column" || exit 1

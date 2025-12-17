@@ -1,0 +1,17 @@
+Column,Type,Required,Description
+dataset_id,string,yes,Stable identifier used to join to other metadata files.
+title,string,yes,Human-readable dataset title.
+description,string,yes,Short description of the dataset contents and purpose.
+creator,string,yes,Name(s) of primary creator(s) or project.
+contact_name,string,yes,Primary contact person.
+contact_email,string,yes,Contact email address.
+license,string,yes,License name or URL (e.g., CC-BY-4.0).
+temporal_start,date,no,Start date or year covered by the dataset (ISO 8601 where possible).
+temporal_end,date,no,End date or year covered by the dataset.
+spatial_extent,string,no,Textual description of spatial coverage (e.g., CUs, regions, coordinates).
+dataset_type,string,no,High-level type (e.g., cu_year_index, survey_timeseries, benchmark).
+source_citation,string,no,Free-text citation for publications, reports, or internal docs.
+provenance_note,string,no,Narrative about data lineage.
+created,datetime,no,Timestamp when dataset was created (ISO 8601).
+modified,datetime,no,Timestamp when dataset was last modified (ISO 8601).
+spec_version,string,no,SDP specification version (e.g., sdp-1.0.0).

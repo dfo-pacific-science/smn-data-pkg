@@ -1,0 +1,9 @@
+Column,Type,Required,Category,Description
+dataset_id,string,yes,required,References dataset_id in dataset.csv.
+table_id,string,yes,required,Short ID for the table (e.g., cu_year_index).
+file_name,string,yes,required,Relative path to the data file (e.g., data/cu_year_index.csv).
+table_label,string,yes,required,Human-readable label for the table.
+description,string,yes,required,Description of what each row represents and how the table is used.
+entity_type,string,no,optional,Human-readable entity type label (e.g., CU-year index, survey event). Use if you don't know the entity_iri.
+entity_iri,string,no,recommended,IRI of the ontology class that represents what each row in the table is (the row-level entity type).
+primary_key,string,no,optional,Comma-separated list of columns forming a primary key (e.g., cu_id,year).
