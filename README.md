@@ -67,21 +67,26 @@ Adopting the Salmon Data Package specification enables a range of capabilities f
 
 ## Quick Start
 
-1. **Read the specification**: See [SPECIFICATION.md](SPECIFICATION.md) for the complete specification
-2. **Review schemas**: Check the schema definitions in [`schemas/`](schemas/)
-3. **See an example**: Explore the minimal example in [`examples/minimal-example/`](examples/minimal-example/)
+- Follow `docs/quickstart.md` for the step-by-step walkthrough.
+- Use `examples/minimal-example/` as a template.
+- Use `SPECIFICATION.md` for the rules that define validity.
+
+For I-ADOPT (a standard for describing variables by parts) guidance and IRI (a web identifier that points to a concept on the internet) sources, see `docs/i-adopt-integration-guide.md` and the I-ADOPT terminology catalogue UI at https://i-adopt.github.io/terminologies/ (role-by-role vocabulary browser).
 
 ## Project Structure
 
 ```
 sdp-spec/
 ├── README.md              # This file
-├── SPECIFICATION.md        # Full specification document
+├── SPECIFICATION.md        # Concise specification (rules that define validity)
 ├── schemas/               # Schema definitions
 │   ├── dataset.csv
 │   ├── tables.csv
 │   ├── column_dictionary.csv
-│   └── codes.csv
+│   └── codes.csv           # Code lists (when categorical columns exist)
+├── docs/                  # Guides and background documentation
+│   ├── quickstart.md       # Human-friendly walkthrough
+│   ├── implementation-guide.md # Tooling and LLM (text-generating AI system) guidance
 ├── examples/              # Example packages
 │   └── minimal-example/
 ├── CHANGELOG.md           # Version history

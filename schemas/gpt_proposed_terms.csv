@@ -1,0 +1,8 @@
+Column,Type,Required,Category,Description
+term_label,string,yes,required,Short name for the proposed term (e.g., spawner_count_natural).
+term_definition,string,yes,required,Plain-language definition of the term's meaning.
+definition_source_url,string,no,optional,URL to a document or webpage that supports the definition.
+term_type,string,yes,required,"Type of term: skos_concept (controlled vocabulary term or compound variable), owl_class (formal class for typing individuals), or owl_object_property (relationship between entities)."
+suggested_parent_iri,string,yes,required,IRI of the closest parent term (broader concept for SKOS or superclass for OWL).
+suggested_relationships,string,no,optional,"Additional relationships: broader/narrower/closeMatch/related (for SKOS) or subclass/sameAs/seeAlso (for OWL)."
+notes,string,no,optional,Extra context or constraints relevant to the term request.

@@ -4,10 +4,14 @@ table_id,string,yes,required,References table_id in tables.csv.
 column_name,string,yes,required,Exact column name in the data file.
 column_label,string,yes,required,Short human-readable label.
 column_description,string,yes,required,Clear definition of the column's meaning.
-column_role,string,yes,required,One of: identifier, attribute, temporal, categorical, measurement.
-value_type,string,yes,required,Basic type: integer, double, string, boolean, date, datetime.
-required,boolean,no,optional,TRUE if the column is required for each row, otherwise FALSE or blank.
-unit_label,string,no,optional,Human-readable unit label (e.g., number of fish, proportion).
-unit_iri,string,no,recommended,IRI for the unit (e.g., UCUM or other unit ontology). Use when the column represents a measurement with units.
-term_iri,string,no,recommended,IRI for the ontology term that represents what this column measures or represents. Links the column to concepts in the DFO Salmon Ontology.
-term_type,string,no,optional,Type of ontology term (e.g., owl_class, owl_object_property, skos_concept). Helps validators understand how to interpret the term_iri.
+column_role,string,yes,required,One of: identifier," attribute"," temporal"," categorical"," measurement."
+value_type,string,yes,required,Basic type: integer," number"," string"," boolean"," date"," datetime."
+required,boolean,no,optional,TRUE if the column is required for each row," otherwise FALSE or blank."
+unit_label,string,no,optional,Human-readable unit label (e.g.," number of fish"," proportion)."
+unit_iri,string,no,recommended,IRI for the unit (e.g.," UCUM/QUDT). Required for measurement columns; also used as the unit component for I-ADOPT-style variable descriptions."
+term_iri,string,no,recommended,IRI for the ontology term that represents what this column measures or represents. Required for measurement columns; use a SKOS concept when the column is a compound variable.
+term_type,string,no,optional,Type of ontology term (e.g.," owl_class"," owl_object_property"," skos_concept). Helps validators understand how to interpret the term_iri."
+property_iri,string,no,optional,I-ADOPT property IRI (what is being measured," e.g."," abundance"," rate). Required for measurement columns.
+entity_iri,string,no,optional,I-ADOPT object-of-interest/entity IRI (what the measurement is about). Required for measurement columns.
+constraint_iri,string,no,optional,I-ADOPT constraint IRI(s) (life stage," origin"," spatial subset"," benchmark). If multiple"," separate IRIs with ';' in a single cell. Optional.
+method_iri,string,no,optional,Procedure/method IRI (aligns to SOSA sosa:Procedure; SOSA is the W3C/OGC observations vocabulary). Optional; fill when known.

@@ -3,8 +3,8 @@ dataset_id,string,yes,required,References dataset_id in dataset.csv.
 table_id,string,yes,required,References table_id in tables.csv.
 column_name,string,yes,required,Name of the column in the data file that uses this code.
 code_value,string,yes,required,Stored value in the data (e.g., R, Y, G, critical, adipose_intact).
-code_label,string,no,optional,Human-readable label corresponding to the code.
-code_description,string,no,optional,Longer description of what the code means.
+code_label,string,no,optional,Canonical human-readable label corresponding to the code (store code values in data tables and join to codes.csv for labels).
+code_description,string,no,optional,Canonical longer description of what the code means (store code values in data tables and join to codes.csv for descriptions).
 vocabulary_iri,string,no,recommended,IRI of the controlled vocabulary that defines valid values for this column. Can point to SKOS concept schemes, NCBI taxonomy, GBIF species lists, or any other controlled vocabulary. Required when referencing large external vocabularies.
 term_iri,string,no,recommended,IRI of the specific ontology term (SKOS concept or other) that code_value represents. Links the code to the DFO Salmon Ontology.
 term_type,string,no,optional,Type of ontology term (e.g., skos_concept, owl_class).
