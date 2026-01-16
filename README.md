@@ -1,4 +1,4 @@
-# Salmon Data Package (SDP) Specification
+# Salmon Data Package (SDP) README
 
 A lightweight, frictionless-style specification for exchanging salmon datasets between scientists, assessment biologists, and data stewards.
 
