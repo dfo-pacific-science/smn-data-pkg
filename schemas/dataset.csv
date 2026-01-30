@@ -1,5 +1,5 @@
 Column,Type,Required,Description
-dataset_id,string,yes,Stable identifier used to join to other metadata files. Prefer a DOI (Digital Object Identifier, a persistent identifier for a dataset or publication) when available; otherwise use a stable local identifier.
+dataset_id,string,yes,Stable identifier used to join to other metadata files. Prefer a DOI (Digital Object Identifier a persistent identifier for a dataset or publication) when available; otherwise use a stable local identifier.
 title,string,yes,Human-readable dataset title.
 description,string,yes,Short description of the dataset contents and purpose.
 creator,string,yes,Name(s) of primary creator(s) or project.
